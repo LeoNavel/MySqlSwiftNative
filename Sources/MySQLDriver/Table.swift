@@ -274,7 +274,7 @@ public extension MySQL {
         }
         
         open func update(_ row:Row, key:String, exclude:[String]? = nil) throws {
-            try update(row, Where: [key : row[key]], exclude: exclude)
+            try update(row, Where: [key : row[key] as Any], exclude: exclude)
         }
         
         open func update(_ object:Any, Where:[String:Any], exclude:[String]? = nil) throws {
